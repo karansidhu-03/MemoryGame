@@ -1,0 +1,95 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #93b1db;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#result {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Grid styling */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    /* 5 columns for 10 cards */
+    grid-template-rows: repeat(2, 170px);
+    /* 2 rows */
+    gap: 15px;
+    /* Spacing between cards */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card (image) styling */
+img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect */
+img:hover {
+    transform: scale(1.05);
+    border-color: #28a745;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Flipped card styling (to be added via JS) */
+.flipped {
+    border-color: #dc3545;
+    transform: rotateY(180deg);
+}
+
+/* Matched card styling (to be added via JS) */
+.matched {
+    border-color: #28a745;
+    opacity: 0.7;
+    cursor: default;
+    transform: scale(1);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    #grid {
+        grid-template-columns: repeat(5, 80px);
+        grid-template-rows: repeat(2, 120px);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    img {
+        width: 80px;
+        height: 120px;
+    }
+
+    h3 {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    #result {
+        font-size: 18px;
+    }
+}
